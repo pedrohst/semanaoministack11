@@ -2,6 +2,8 @@ const express = require('express');
 
 const cors = require('cors');
 
+const { errors } = require('celebrate');
+
 const routes = require('./routes');
 
 const app = express();
@@ -18,6 +20,8 @@ app.use(cors({
 app.use(express.json());
 
 app.use(routes);//linha criada após a criação do routes.js
+
+app.use(errors());// para retornar o erro 400 (ao invés do 500) em formato JSON
 
 /**
  * Rota (tudo denntro do método GET)
@@ -130,4 +134,5 @@ a resposta no console.log aqui embaixo foi:
 
 
 
-app.listen(3333); // a porta 80 da problema em muitos SOs e o diego que escolheu a 3333 pro node
+//app.listen(3333); // a porta 80 da problema em muitos SOs e o diego que escolheu a 3333 pro node
+module.exports = app;
