@@ -43,23 +43,30 @@ export default StyleSheet.create({
     },
 
     incident: {
+        width: '100%',
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16
     },
 
+    lineGroup: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: "center"
+    },
+
     incidentProperty: {
-        fontSize: 14,
+        fontSize: 20,
         color: '#41414d',
         fontWeight: 'bold'
     },
 
     incidentValue: {
-        marginTop: 8,
-        fontSize: 15,
-        marginBottom: 24,
-        color: '#737380'
+        fontSize: 21,
+        color: '#737380',
+        marginBottom: 18,
+        marginLeft: 12
     },
 
     detailsButton: {
@@ -69,9 +76,9 @@ export default StyleSheet.create({
     },
 
     detailsButtonText: {
-        color: '#E02041',
+        color: '#C02041',
         fontSize: 15,
-        fontWeight: 'bold'
+        fontWeight: '100'
     }
 
 });

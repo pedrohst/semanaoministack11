@@ -69,9 +69,9 @@ export default function Incidents()
 
         </View>
 
-        <Text style={styles.title}>Bem-vindo(a)!</Text>
+        <Text style={styles.title}>Salve o dia,</Text>
 
-        <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia!</Text>
+        <Text style={styles.description}>escolhendo um dos casos abaixo!</Text>
 
         <FlatList 
             data={incidents}
@@ -82,28 +82,31 @@ export default function Incidents()
             onEndReached={loadIncidents}
             renderItem={ ({ item: incident }) => (
 
-            <View style={styles.incident}>
+            <TouchableOpacity 
+                style={styles.detailsButton}
+                onPress={ () => navigateToDetail(incident) }>
 
-                <Text style={styles.incidentProperty}>ONG:</Text>
-                <Text style={styles.incidentValue}>{incident.name}</Text>
+                <View style={styles.incident}>
 
-                <Text style={styles.incidentProperty}>CASO:</Text>
-                <Text style={styles.incidentValue}>{incident.title}</Text>
+                    <Text style={styles.incidentProperty}>ONG</Text>
+                    <Text style={styles.incidentValue}>{incident.name}</Text>
 
-                <Text style={styles.incidentProperty}>VALOR:</Text>
-                <Text style={styles.incidentValue}>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value) }</Text>
+                    <Text style={styles.incidentProperty}>CASO</Text>
+                    <Text style={styles.incidentValue}>{incident.title}</Text>
+                    
+                    <Text style={styles.incidentProperty}>Valor</Text>
+                    <Text style={styles.incidentValue}>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value) }</Text>
 
-                <TouchableOpacity 
-                    style={styles.detailsButton}
-                    onPress={ () => navigateToDetail(incident) }>
+                    <View style={styles.lineGroup}>
+                        <Text style={styles.detailsButtonText}>Toque para mais detalhes</Text>
+                    </View>
 
-                    <Text style={styles.detailsButtonText}>Pressione para ver mais detalhes</Text>
+                    {/* <Feather name="arrow-right" size={16} color="#E02041" /> */}
+                    
+                </View>
 
-                    <Feather name="arrow-right" size={16} color="#E02041" />
+            </TouchableOpacity>
 
-                </TouchableOpacity>
-
-            </View>
 
             )}
         />

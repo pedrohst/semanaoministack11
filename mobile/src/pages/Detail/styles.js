@@ -15,12 +15,38 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
 
+    headerArrowText: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+
+    headerText: {
+        color: '#E82041'
+    },
+
     incident: {
+        height: '60%',
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
         marginTop: 24
+    },
+
+    incidentNameCityUf: {
+        textAlign: 'center',
+        fontSize: 18,
+        color: '#41414d',
+        fontWeight: 'bold',
+        marginTop: 24
+    },
+
+    incidentTitle: {
+        textAlign: 'center',
+        fontSize: 18,
+        color: '#41414d',
+        marginTop: 14
     },
 
     incidentProperty: {
@@ -34,6 +60,12 @@ export default StyleSheet.create({
         marginTop: 8,
         fontSize: 15,
         color: '#737380'
+    },
+
+    valor: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
 
     contactBox: {
